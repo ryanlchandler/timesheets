@@ -1,0 +1,7 @@
+/.idea/
+
+/target/
+
+/timesheets.iml
+
+/src/main/java/com/ryanlchandler/timesheets/configuration/
