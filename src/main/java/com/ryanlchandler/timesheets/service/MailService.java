@@ -21,6 +21,10 @@ public class MailService {
 
     public static void send(String to, String from, String fromArn, String subject, String reportBody, String accessKey, String secretKey){
         try{
+            System.out.println("from:    " + from);
+            System.out.println("to:      " + to);
+            System.out.println("subject: " + subject);
+
             Session session = Session.getDefaultInstance(new Properties());
             MimeMessage message = new MimeMessage(session);
             message.setSubject(subject, "UTF-8");
