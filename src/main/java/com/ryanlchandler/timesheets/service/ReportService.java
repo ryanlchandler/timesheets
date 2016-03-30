@@ -19,6 +19,7 @@ public class ReportService {
         DEPT_MAP.put("040", "Activites");
         DEPT_MAP.put("050", "Housekeeping");
         DEPT_MAP.put("060", "Maintenance");
+        DEPT_MAP.put("070", "Sales");
         DEPT_MAP.put("080", "Admin");
     }
 
