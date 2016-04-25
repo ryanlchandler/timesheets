@@ -151,7 +151,7 @@ public class TimesheetsCSV {
                         pt.incMissedLunch(timeSheetEntry);
                     }
 
-                    map.put(timeSheetEntry.getDept(), pt);
+                    map.put(StringUtils.defaultString(timeSheetEntry.getDept(), "none"), pt);
                 } catch (IllegalArgumentException e) {
                     invalidRowCount++;
                 }
