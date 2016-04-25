@@ -17,10 +17,22 @@ public class ExcelToCSV {
             Workbook wb = new HSSFWorkbook(excelIn);
             Sheet sheet = wb.getSheetAt(0);
 
+            Integer columnCount = null;
+
             for(int r = 0; r < sheet.getLastRowNum(); r++){
                 Row row = sheet.getRow(r);
                 List<String> columns = rowToCSV(wb, row);
                 columns.remove(columns.size() - 1);
+
+                if(columnCount == null){
+                    columnCount = columns.size();
+                }else if(columns.size() < columnCount){
+                    int columnsToAdd = columnCount - columns.size();
+
+                    for(int x = 0; x < columnsToAdd; x++){
+                        columns.add("");
+                    }
+                }
 
                 String line = "\"" + StringUtils.remove(StringUtils.remove(StringUtils.join(columns, "\",\""), "\n"), "\r") + "\"\n";
                 out.write(line.getBytes());
